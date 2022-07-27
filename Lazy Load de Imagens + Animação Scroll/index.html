@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lazy Load Imagens + Animação Scroll</title>
+</head>
+<body>
+    <header>
+        Lazy Loading de Imagens + Animação no Scroll
+    </header>
+    <main>
+        <div class="teste">
+            <img data-src="http://placehold.it/750x750?text=img0" >
+        </div>
+        <div>
+            <img data-src="http://placehold.it/750x750?text=img1" >
+        </div>
+        <div>
+            <img data-src="http://placehold.it/750x750?text=img2" >
+        </div>
+        <div>
+            <img data-src="http://placehold.it/750x750?text=img3" >
+        </div>
+        <div>
+            <img data-src="http://placehold.it/750x750?text=img4" >
+        </div>
+        <div>
+            <img data-src="http://placehold.it/750x750?text=img0" >
+        </div>
+        <div>
+            <img data-src="http://placehold.it/750x750?text=img1" >
+        </div>
+        <div>
+            <img data-src="http://placehold.it/750x750?text=img2" >
+        </div>
+    </main>
+    <footer>
+        desenvolvido por Moises
+    </footer>
+
+    <script>
+       
+
+        function ativanoScroll(){
+            document.querySelectorAll('img').forEach((img, index) =>{
+                if(img.getBoundingClientRect().top < window.innerHeight){
+                    img.src = img.getAttribute('data-src');
+                    
+                };
+            })
+        }
+        window.addEventListener('scroll', ativanoScroll);
+    </script>
+</body>
+
+
+</html>
